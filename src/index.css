@@ -1,13 +1,236 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+
+.prueba{
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding:80px 0px;
+    margin-top: 20px;
+  
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.texto{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.textoRojo{
+    color:red;
+}
+
+.design{
+    
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+  left: 10px;
+  margin-right: 20px;
+
+  padding: 10px;
+  border: 2px solid #5592A9;
+  border-radius: 20px;
+  color: #fff;
+  box-shadow: black;
+  background-color: #2E74B1;
+   
+}
+
+.design1{
+    
+    display: inline-block;
+     
+  }
+  .titulo{
+    color:#0E6484;
+    
+  }
+ 
+  .hola{
+    margin: 20px;
+    
+
+  }
+
+  fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+
+.list-group-item{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.excel{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px;
+  margin-bottom: -10px;
+}
+
+.expandir{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.ticket{
+  margin-left: 50px;
+}
+
+
+.marco{
+  width: 320px;
+}
+
+
+
+.prueba2{
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+
+  margin-top: -685px;
+  margin-left: 340px;
+
+
+
+}
+
+.historico{
+  margin-top: 10px;
+}
+
+.borde{
+  color:black;
+}
+
+.separacion{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.complete{
+  text-decoration: line-through;
+}
+
+.espacio{
+  margin-left: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: 720px;
+  top: -900px;
+}
+
+.espacio1{
+  margin-right: 80px;
+}
+
+.espacioLine{
+  margin-right: 220px;
+}
+
+.subir{
+  margin-top: -380px;
+}
+
+.detail{
+  border:1px solid black;
+  background-color: #ddd;
+  margin-top: -10px;
+ 
+}
+.encabezadoPrincipal{
+  background-color: #0E6484;
+  color: white;
+}
+
+.encabezadoSecundario{
+  background-color: #eee;
+  color: #111;
+
+}
+
+.encabezadoSecundario th{
+  border: 1px solid black;
+}
+
+
+.encabezadoPrincipal th{
+  border: 1px solid black;
+}
+
+.alinearTexto{
+  vertical-align:middle;
+  text-align:center;
+}
+
+.cdr th[rowspan] {
+  vertical-align: middle;
+  text-align: center;
+}
+.sombreadoFila{
+  background-color:#3ea79d;
+  font-weight: bold;
+  color: white;
+}
+
+.sombreadoCelda{
+  background-color: #19bd70;
+}
+
+.movimiento{
+  margin-left: 30px;
+}
+
+.moverBoton{
+  margin-left: 50px;
+  margin-top:20px;
+  padding: 10px 20px;
+  
+}
+
+.tituloSombreado{
+  background-color:#eee;
+}
+
+.movimientoProveedor{
+  margin-right:50px;
+}
+
+
+.movimiento1{
+margin-top:20px;
+margin-left: 30px;
+}
+
+.movimiento2{
+ margin-right:50px;
+}
+.movimiento3{
+ margin-left: 30px;
+}
+
+.sombreadoBorrar{
+  background-color:#eee;
 }

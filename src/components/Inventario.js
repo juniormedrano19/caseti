@@ -283,33 +283,22 @@ useEffect(() => {
 
 
     return (
-        <div>
-        <div className="excel row">
-        <div className="col-4">
-        <h1>Inventario Empresarial</h1>
+        <div className='contenedorXlsx'>
+        <div className="cabecera-tickets contenedorXlsx">
+        <div className="title-excel">
+        <h1>Inventario Empresarial </h1>
         </div>
-        <div className="col-4">
-            <ReactHTMLTableToExcel 
-                id="botonExportarExcel"
-                className="btn btn-outline-success btn-block"
-                table="tablaInventario"
-                filename="Inventario"
-                sheet="Datos_Inventario"
-                buttonText="Descargar Excel"
-
-                
-            />
-           </div>
-            <div className="col-4">
+      
+            <div className="nav-ticketsButtons">
               <form 
-              className="form-group expandir mt-3"
+              className="formulario-search"
             
               >
            
 <input
 type="text"
 id="search"
-className="form-control mr-sm-2"
+className="input-searchTickets"
 name="search"
 autoComplete="off"
 placeholder="Search"
@@ -328,13 +317,28 @@ onChange={ handleInputSearch }
         
     <button 
    
-    className="btn btn-success my-2 my-sm-0" 
-    type="submit">Search</button>
+    className="btn btn-searchTickets" 
+    type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
     </form>
+    <div className="col-4">
+            <ReactHTMLTableToExcel 
+                id="botonExportarExcel"
+                className="btn btn-descargarExcelTickets"
+                table="tablaInventario"
+                filename="Inventario"
+                sheet="Datos_Inventario"
+                buttonText="Descargar Excel"
+
+                
+            />
+           </div>
     </div>
         
         </div>
-        <hr />
+
+
+        
+    
         <form className="hola" onSubmit={handleSubmit}>
         <fieldset className="scheduler-border">
         <legend className="scheduler-border">Inventario</legend>
@@ -472,7 +476,7 @@ onChange={handleInputChange}
     <input
     type="text"
     className="form-control"
-    name="serie"
+
     autoComplete="off"
     placeholder="Número de serie"
     name="numSerie"

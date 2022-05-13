@@ -44,20 +44,20 @@ export const TaskAdd = ({handleAddTask}) => {
 
     return (
         <div>
-             <h4>Agregar tareas -Día:<small> {fecha}</small></h4>
-           <hr/>
+             <h4 className='agregar-title'>Agregar tareas -Día:<small> {fecha}</small></h4>
+          {/*  <hr/> */}
            <form onSubmit={ handleSubmit }>
                <input
                type="text"
                name="description"
-               className="form-control"
+               className="input-addTasks"
                placeholder="Tareas a realizar ..."
                autoComplete="off"
                value={ description }
                onChange= { handleInputChange }
                />
                <button 
-               className="btn btn-outline-primary mt-1 btn-block"
+               className="btn btn-addTaks"
                type="submit"
                
                >Agregar</button>

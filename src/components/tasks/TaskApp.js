@@ -92,13 +92,13 @@ dispatch({
 
     return (
 
-        <div>
+        <div className="contenedorXlsx">
 
-        <h1>Tareas a realizar ({tasks.length}) </h1>
-        <hr />
+        <h1 className='title-task'>Tareas a realizar ({tasks.length}) </h1>
+   {/*      <hr /> */}
 
-       <div className="row">
-           <div className="col-7">
+       <div className="title-mainTask">
+           <div className="list-tasks">
          <TaskList 
             tasks={tasks}
             handleDelete={ handleDelete }
@@ -107,7 +107,7 @@ dispatch({
          />
 
            </div>
-           <div className="col-5">
+           <div className="add-tasks">
 
             <TaskAdd  handleAddTask={ handleAddTask } />
                

@@ -12,9 +12,10 @@ export const TaskListItem = ({task, i, handleDelete, handleToggle}) => {
             {i+1} . {task.description}
             </p>
             <button 
-            className="btn btn-danger"
+            title='Borrar'
+            className="btn btn-deleteTasks"
             onClick={()=>handleDelete(task.id)}
-            > Borrar 
+            > <i class="fa-solid fa-trash"></i>
             </button>
         </li>
     )

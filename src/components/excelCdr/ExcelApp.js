@@ -1255,14 +1255,14 @@ const handleDelete=(id)=>{
 
     return (
         <div>
-            <div className="excel row">
-        <div className="col-6">
+            <div className="boton-nav contenedorXlsx">
+        <div className="title-excel">
         <h1>Excel CDR</h1>
         </div>
         <div className="col-4">
             <ReactHTMLTableToExcel 
                 id="botonExportarExcel"
-                className="btn btn-outline-success btn-block"
+                className="btn btn-success btn-block"
                 table="tablaInventario"
                 filename="Gasto_Telefonía"
                 sheet="Resumen"
@@ -1274,9 +1274,9 @@ const handleDelete=(id)=>{
           
         
         </div>
-            <hr/>
-            <div className="row movimiento">
-            <div className="col-2 movimientoProveedor">
+           {/*  <hr/> */}
+            <div className="proveedores-list contenedorXlsx">
+            <div className="proveedor-name">
             <h2>Convergia</h2>
           <Upload
             name="file"
@@ -1285,12 +1285,12 @@ const handleDelete=(id)=>{
             multiple={false}
             
           >
-            <Button>
-              <Icon type="upload"/> Abrir Archivo
+            <Button className='btn btn-archivo'>
+              <Icon type="upload"/> <i class="fa-solid fa-folder-open"></i> Abrir Archivo
             </Button>
           </Upload>
         </div>
-        <div className="col-2 movimientoProveedor">
+        <div className="proveedor-name">
         <h2>Magnavoz</h2>
           <Upload
             name="file"
@@ -1298,12 +1298,12 @@ const handleDelete=(id)=>{
             onRemove={() => setState({ rows: [] })}
             multiple={false}
           >
-            <Button>
-              <Icon type="upload" /> Abrir Archivo
+           <Button className='btn btn-archivo'>
+              <Icon type="upload"/> <i class="fa-solid fa-folder-open"></i> Abrir Archivo
             </Button>
           </Upload>
         </div>
-        <div className="col-2 movimientoProveedor">
+        <div className="proveedor-name">
         <h2>Ipbusiness</h2>
           <Upload
             name="file"
@@ -1311,12 +1311,12 @@ const handleDelete=(id)=>{
             onRemove={() => setState3({ rows3: [] })}
             multiple={false}
           >
-            <Button>
-              <Icon type="upload" /> Abrir Archivo
+            <Button className='btn btn-archivo'>
+              <Icon type="upload"/> <i class="fa-solid fa-folder-open"></i> Abrir Archivo
             </Button>
           </Upload>
         </div>
-        <div className="col-2 movimientoProveedor">
+        <div className="proveedor-name">
         <h2>Hindutelecom</h2>
           <Upload
             name="file"
@@ -1324,12 +1324,12 @@ const handleDelete=(id)=>{
             onRemove={() => setState4({ rows4: [] })}
             multiple={false}
           >
-            <Button>
-              <Icon type="upload" /> Abrir Archivo
+            <Button className='btn btn-archivo'>
+              <Icon type="upload"/> <i class="fa-solid fa-folder-open"></i> Abrir Archivo
             </Button>
           </Upload>
         </div>
-        <div className="col-2 movimientoProveedor">
+        <div className="proveedor-name">
         <h2>Perucalls</h2>
           <Upload
             name="file"
@@ -1337,8 +1337,8 @@ const handleDelete=(id)=>{
             onRemove={() => setState5({ rows5: [] })}
             multiple={false}
           >
-            <Button>
-              <Icon type="upload" /> Abrir Archivo
+           <Button className='btn btn-archivo'>
+              <Icon type="upload"/> <i class="fa-solid fa-folder-open"></i> Abrir Archivo
             </Button>
           </Upload>
         </div>
@@ -1346,8 +1346,8 @@ const handleDelete=(id)=>{
 
             </div>
             <form onSubmit={handleSubmit}>
-        <div className="row movimiento1">
-        <div className="col-2 movimiento2">
+        <div className="costos-unitarios contenedorXlsx">
+        <div className="costo">
   
       <label htmlFor="costoUnit_Movil_Convergia">Costo Unitario Móviles Convergia</label>
 <select 
@@ -1357,7 +1357,7 @@ name="costoUnit_Movil_Convergia"
 value={ costoUnit_Movil_Convergia } 
 onChange={handleInputChange}
 >
-<option defaultValue>...</option>
+<option defaultValue>--Seleccione--</option>
 <option >0.0085</option>
 <option>0.087</option>
 </select>
@@ -1365,7 +1365,7 @@ onChange={handleInputChange}
 
         </div>
        
-        <div className="col-2 movimiento2">
+        <div className="costo">
   
       <label htmlFor="costoUnit_Movil_Magnavoz">Costo Unitario Móvil Magnavoz</label>
 <select 
@@ -1375,7 +1375,7 @@ name="costoUnit_Movil_Magnavoz"
 value={costoUnit_Movil_Magnavoz} 
 onChange={handleInputChange}
 >
-<option defaultValue>...</option>
+<option defaultValue>--Seleccione--</option>
 <option >0.042</option>
 <option>0.035</option>
 <option>0.032</option>
@@ -1385,7 +1385,7 @@ onChange={handleInputChange}
    
 
         </div>
-        <div className="col-2 movimiento2">
+        <div className="costo">
   
       <label htmlFor="costoUnit_Movil_Ipbusiness">Costo Unitario Móvil Ipbusiness</label>
 <select 
@@ -1395,13 +1395,13 @@ name="costoUnit_Movil_Ipbusiness"
 value={ costoUnit_Movil_Ipbusiness } 
 onChange={handleInputChange}
 >
-<option defaultValue>...</option>
+<option defaultValue>--Seleccione--</option>
 <option>0.038</option>
 </select>
    
 
         </div>
-        <div className="col-2 movimiento2">
+        <div className="costo">
   
       <label htmlFor="costoUnit_Movil_Hindutelecom">Costo Unitario Móvil Hindutelecom</label>
 <select 
@@ -1411,7 +1411,7 @@ name="costoUnit_Movil_Hindutelecom"
 value={ costoUnit_Movil_Hindutelecom } 
 onChange={handleInputChange}
 >
-<option defaultValue>...</option>
+<option defaultValue>--Seleccione--</option>
 <option>0.035</option>
 <option>0.030</option>
 <option>0.027</option>
@@ -1419,7 +1419,7 @@ onChange={handleInputChange}
    
 
         </div>
-        <div className="col-2 movimiento2">
+        <div className="costo">
   
   <label htmlFor="costoUnit_Movil_Perucalls">Costo Unitario Móvil Perucalls</label>
 <select 
@@ -1429,7 +1429,7 @@ name="costoUnit_Movil_Perucalls"
 value={ costoUnit_Movil_Perucalls } 
 onChange={handleInputChange}
 >
-<option defaultValue>...</option>
+<option defaultValue>--Seleccione--</option>
 <option>0.034</option>
 <option>0.030</option>
 <option>0.027</option>
@@ -1440,22 +1440,22 @@ onChange={handleInputChange}
 
 
         </div>
-           <div className="row movimiento3 mt-4 mb-2">
-        <div className="col-12">
+           <div className="contenedorXlsx btn-Calcular">
+      
             <button 
 
             type="submit"
             className="btn btn-success btn-block">
                 Calcular
             </button>
-        </div>
+       
         </div>
         </form>
 
-            <div className="row ">
-            <div className="col-11 ml-5 mt-3">
+            <div className="table-main ">
+          
             <table 
-className="table table-bordered table-responsive-md text-center cdr"
+className="table-proveedores"
 id="tablaInventario"
 >
 
@@ -1525,10 +1525,10 @@ id="tablaInventario"
     rowSpan="6"
     tyle="text-align:center;"
    
-    className="alinearTexto encabezadoPrincipal"
+    className="date-encabezado"
     scope="col"> {`${data.mes} ${new Date().getFullYear()}`}</th>
     
-    <th scope="col" className="tituloSombreado">Fijos Lima</th>
+    <th scope="col" className="tituloSombreado1">Fijos Lima</th>
         <td>{data.Fijos_Lima_Convergia1}</td>
         <td>${(data.Fijos_Lima_Convergia1*costoUnit_Fijo_Lima_Convergia).toFixed(2)}</td>
         <td>{data.Fijos_Lima_Ipbusiness1}</td>
@@ -1550,18 +1550,19 @@ id="tablaInventario"
     rowSpan="6"
     tyle="text-align:center;"
    
-    className="alinearTexto sombreadoBorrar"
+    className="delete-button"
     scope="col"><button 
-className="btn btn-danger ml-1 mr-1"
+    title='Borrar'
+className="delete-main"
 onClick={ ()=>handleDelete(data.id) }
-> Borrar </button></th>
+> <i class="fa-solid fa-trash"></i> </button></th>
 
 
    
 
 </tr>
     
-<tr>   <th scope="col" className="tituloSombreado">Fijos Provincia
+<tr>   <th scope="col"  className="tituloSombreado1">Fijos Provincia
 </th>
  
   <td>{data.Fijos_Provincia_Convergia1}</td>
@@ -1583,7 +1584,7 @@ onClick={ ()=>handleDelete(data.id) }
         <td>{(parseFloat((data.Fijos_Provincia_Convergia1*costoUnit_Provincia_Convergia).toFixed(2)) +parseFloat((data.Fijos_Provincia__Ipbusiness1*costoUnit_Provincia_Ipbusiness).toFixed(2))+parseFloat((data.Fijos_Provincia_Magnavoz1*costoUnit_Provincia_Magnavoz).toFixed(2))+parseFloat((data.Fijos_Provincia_Hindutelecom1*costoUnit_Provincia_Hindutelecom).toFixed(2)) +parseFloat((data.Fijos_Provincia_Perucalls1*costoUnit_Provincia_Perucalls).toFixed(2))).toFixed(2)}</td>
 </tr>
 
-<tr>   <th scope="col" className="tituloSombreado">Móviles
+<tr>   <th scope="col"  className="tituloSombreado1">Móviles
 </th>
    <td>{data.Moviles_Convergia1}</td>
         <td>${(data.Moviles_Convergia1*data.costoUnit_Movil_Convergia).toFixed(2)}</td>
@@ -1604,7 +1605,7 @@ onClick={ ()=>handleDelete(data.id) }
         <td>{(parseFloat((data.Moviles_Convergia1*data.costoUnit_Movil_Convergia).toFixed(2)) +parseFloat((data.Moviles__Ipbusiness1*data.costoUnit_Movil_Ipbusiness).toFixed(2))+parseFloat((data.Moviles_Magnavoz1*data.costoUnit_Movil_Magnavoz).toFixed(2))+parseFloat((data.Moviles_Hindutelecom1*data.costoUnit_Movil_Hindutelecom).toFixed(2)) +parseFloat((data.Moviles_Perucalls1*data.costoUnit_Movil_Perucalls).toFixed(2))).toFixed(2)}</td>
 </tr>
 
-<tr>   <th scope="col" className="tituloSombreado">Internacionales
+<tr>   <th scope="col"  className="tituloSombreado1">Internacionales
 </th>
   <td>{data.Internacional_Convergia1}</td>
         <td>---</td>
@@ -1625,7 +1626,7 @@ onClick={ ()=>handleDelete(data.id) }
         <td>---</td>
 </tr>
 
-<tr>   <th scope="col" className="tituloSombreado">Rural
+<tr>   <th scope="col"  className="tituloSombreado1">Rural
 </th>
   <td>{data.Rural_Convergia1}</td>
         <td>${(data.Rural_Convergia1*costoUnit_Rural_Convergia).toFixed(2)}</td>
@@ -1646,7 +1647,7 @@ onClick={ ()=>handleDelete(data.id) }
         <td>{(parseFloat((data.Rural_Convergia1*costoUnit_Rural_Convergia).toFixed(2)) +parseFloat((data.Rural__Ipbusiness1*costoUnit_Rural_Ipbusiness).toFixed(2))+parseFloat((data.Rural_Magnavoz1*costoUnit_Rural_Magnavoz).toFixed(2))+parseFloat((data.Rural_Hindutelecom1*costoUnit_Rural_Hindutelecom).toFixed(2)) +parseFloat((data.Rural_Perucalls1*costoUnit_Rural_Perucalls).toFixed(2))).toFixed(2)}</td>
 </tr>
 
-<tr className="sombreadoFila">   <th className="sombreadoCelda"
+<tr  className="tituloSombreadoTotal">   <th className="sombreadoCeldaTotal"
 scope="col">Total
 </th>
   <td>{parseFloat(data.Fijos_Lima_Convergia1) +parseFloat(data.Fijos_Provincia_Convergia1)+parseFloat(data.Moviles_Convergia1)+parseFloat(data.Internacional_Convergia1) +parseFloat(data.Rural_Convergia1)}</td>
@@ -1674,7 +1675,6 @@ scope="col">Total
 
 
 </table>
-            </div>
         </div>
 
 

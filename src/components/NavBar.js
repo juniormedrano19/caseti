@@ -10,25 +10,26 @@ export const NavBar = () => {
 
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-  <Link to="/" className="navbar-brand" >Home</Link>
+        <nav className="navbar-principal">
+{/*   <Link to="/" className="navbar-brand" >Home</Link> */}
 
-  <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div className="navbar-nav">
-      <NavLink exact activeClassName="active" to="/" className="nav-item nav-link">Regístrate</NavLink>
-      <NavLink exact activeClassName="active" to="/login" className="nav-item nav-link">Login</NavLink>
-      <NavLink exact activeClassName="active" to="/inventory" className="nav-item nav-link" >Inventario</NavLink>
-      <NavLink exact activeClassName="active" to="/ticket" className="nav-item nav-link" >Formulario de Tickets</NavLink>
-      <NavLink exact activeClassName="active" to="/todo" className="nav-item nav-link" >Tareas</NavLink>
-      <NavLink exact activeClassName="active" to="/users" className="nav-item nav-link" >Usuarios</NavLink>
-      <NavLink exact activeClassName="active" to="/cdr" className="nav-item nav-link" >Work in CDRs</NavLink>
+  <div >
+    <div className=" contenedor navbar-nav ">
+    <Link to="/" className='enlace-nav active'  >Home</Link>
+ {/*      <NavLink exact activeClassName="active" to="/" className="nav-item nav-link">Regístrate</NavLink>
+      <NavLink exact activeClassName="active" to="/login" className="nav-item nav-link">Login</NavLink> */}
+      <NavLink exact activeClassName="active" to="/inventory" className='enlace-nav'  >Inventario</NavLink>
+      <NavLink exact activeClassName="active" to="/ticket" className='enlace-nav' >Formulario de Tickets</NavLink>
+      <NavLink exact activeClassName="active" to="/todo" className='enlace-nav' >Tareas</NavLink>
+      <NavLink exact activeClassName="active" to="/users" className='enlace-nav' >Usuarios</NavLink>
+      <NavLink exact activeClassName="active" to="/cdr" className='enlace-nav' >Work in CDRs</NavLink>
     </div>
   </div>
-  <form className="form-inline">
+  {/* <form className="form-inline">
 
   <button className="btn btn-info">Dark</button>
   <a className="nav-item nav-link" href="#">{newUserLower}</a>
-  </form>
+  </form> */}
 </nav>
     )
 }

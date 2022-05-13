@@ -612,33 +612,22 @@ useEffect(() => {
 
 
     return (
-        <div>
-        <div className="excel row">
-        <div className="col-4">
+        <div className='tickets-screen'>
+        <div className="cabecera-tickets contenedorXlsx">
+        <div className="title-excel">
         <h1>Registro de Tickets</h1>
         </div>
-        <div className="col-4">
-            <ReactHTMLTableToExcel 
-                id="botonExportarExcel"
-                className="btn btn-outline-success btn-block"
-                table="tablaInventario"
-                filename="Reporte_Tickets"
-                sheet="Reporte"
-                buttonText="Descargar Excel"
-
-                
-            />
-           </div>
-            <div className="col-4">
+      
+            <div className="nav-ticketsButtons">
               <form 
-              className="form-group expandir mt-3"
+              className="formulario-search"
             
               >
            
 <input
 type="text"
 id="search"
-className="form-control mr-sm-2"
+className="input-searchTickets"
 name="search"
 autoComplete="off"
 placeholder="Search"
@@ -657,272 +646,289 @@ onChange={ handleInputSearch }
         
     <button 
    
-    className="btn btn-success my-2 my-sm-0" 
-    type="submit">Search</button>
+    className="btn btn-searchTickets" 
+    type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
     </form>
+    <div className="col-4">
+            <ReactHTMLTableToExcel 
+                id="botonExportarExcel"
+                className="btn btn-descargarExcelTickets"
+                table="tablaInventario"
+                filename="Reporte_Tickets"
+                sheet="Reporte"
+                buttonText="Descargar Excel"
+
+                
+            />
+           </div>
     </div>
         
         </div>
-        <hr/>
+
+ 
+
         <form
         onSubmit={handleSubmit}
+        
         >
-        <div className="row ml-4 mt-4">
+        <div className="contenedorXlsx contenedor-mainTickets">
       
-        <div className="col-5">
-        <fieldset className="scheduler-border">
-        <legend className="scheduler-border">Formulario Ticket</legend>
+        <div className='campos'>
+
+        <fieldset className='fieldset-Main'>
+        <legend className='legend-main'>Formulario Ticket</legend>
        
-        <div className="form-group ml-2">
-        <fieldset className="scheduler-border marco">
-        <legend className="scheduler-border">Datos generales</legend>
-        <div className="form-group">
-<label htmlFor="ip">Nombres y Apellidos(*) </label>
-<input
-type="text"
-id="name"
-className="form-control"
-name="name"
-autoComplete="off"
-placeholder="Nombres y Apellidos"
-value={name}
-onChange={handleInputChange}
+        <div >
+        <fieldset className='fieldset-Main'>
+        <legend  className='legend-campo'>Datos generales</legend>
+        <div className='campo-labelInput'>
+            <label htmlFor="ip">Nombres y Apellidos(*) </label>
+            <input
+            type="text"
+            id="name"
+           
+            name="name"
+            autoComplete="off"
+            placeholder="Nombres y Apellidos"
+            value={name}
+            onChange={handleInputChange}
 
-/>
-</div>
- 
-<div className="form-group">
-<label htmlFor="ip">Dirección IP VPN (*) </label>
-<input
-type="text"
-id="ip"
-className="form-control"
-name="direccionIp"
-autoComplete="off"
-placeholder="Dirección IP VPN"
-value={direccionIp}
-onChange={handleInputChange}
+            />
+            </div>
+            
+            <div className='campo-labelInput' >
+            <label htmlFor="ip">Dirección IP VPN (*) </label>
+            <input
+            type="text"
+            id="ip"
+           
+            name="direccionIp"
+            autoComplete="off"
+            placeholder="Dirección IP VPN"
+            value={direccionIp}
+            onChange={handleInputChange}
 
-/>
-</div>
+            />
+            </div>
 
-<div className="form-group">
-      <label htmlFor="supervisor">Supervisor</label>
-<select 
-id="supervisor" 
-className="form-control"
-name="supervisor"
-value={ supervisor } 
-onChange={handleInputChange}
->
-<option defaultValue>...</option>
-<option>Aida Baldeón
-</option>
-<option>Cintya Zapata</option>
-<option>Katherine Mogollón
-</option>
-<option>Leda Valencia</option>
-<option>Renzo Ramos
-</option>
-<option>José Alayo
-</option>
-<option>Walter Yancachajlla
-</option>
-<option>José Gallegos</option>
-<option>José Zárate
-</option>
-<option>Aida Baldeón</option>
-<option>Iván Salazar
-</option>
-<option>Julith Hidalgo
-</option>
-<option>Hannie Llanos
-</option>
-<option>Paola Nieves
-</option>
-<option>Patricia Arteaga
-</option>
-<option>Jacqueline Navarrete
-</option>
-</select>
-    </div>
-    </fieldset>
-    </div>
+            <div className='campo-labelInput'>
+                <label htmlFor="supervisor">Supervisor</label>
+            <select 
+            id="supervisor" 
+           className='select-ticket'
+            name="supervisor"
+            value={ supervisor } 
+            onChange={handleInputChange}
+            >
+            <option defaultValue>...</option>
+            <option>John Doe
+            </option>
+            <option>John Doe</option>
+            <option>John Doe
+            </option>
+            <option>John Doe</option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe</option>
+            <option>John Doe
+            </option>
+            <option>John Doe</option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            <option>John Doe
+            </option>
+            </select>
+                </div>
+                </fieldset>
+                </div>
 
-    <div className="form-group ml-2">
-    <fieldset className="scheduler-border marco">
-        <legend className="scheduler-border">Velocidad de Internet</legend>
+                <div >
+                <fieldset className='fieldset-Main' >
+                    <legend className='legend-campo'>Velocidad de Internet</legend>
 
-    <div className="form-group ">
-<label htmlFor="download">Descarga(↓) </label>
-<input
-type="text"
-id="download"
-className="form-control"
-name="download"
-autoComplete="off"
-placeholder="Descarga"
-value={download}
-onChange={handleInputChange}
+                <div  className='campo-labelInput'>
+            <label htmlFor="download">Descarga(↓) </label>
+            <input
+            type="text"
+            id="download"
+           
+            name="download"
+            autoComplete="off"
+            placeholder="Descarga"
+            value={download}
+            onChange={handleInputChange}
 
-/>
-</div>
+            />
+            </div>
 
-<div className="form-group">
-<label htmlFor="carga">Carga(↑) </label>
-<input
-type="text"
-id="carga"
-className="form-control"
-name="carga"
-autoComplete="off"
-placeholder="Carga"
-value={carga}
-onChange={handleInputChange}
+            <div className='campo-labelInput'>
+            <label htmlFor="carga">Carga(↑) </label>
+            <input
+            type="text"
+            id="carga"
+            
+            name="carga"
+            autoComplete="off"
+            placeholder="Carga"
+            value={carga}
+            onChange={handleInputChange}
 
-/>
-</div>
-<div className="form-group ">
-      <label htmlFor="tipo">Tipo de Conexión de Internet</label>
-<select 
-id="tipo" 
-className="form-control"
-name="tipo"
-value={tipo}
-onChange={handleInputChange}
->
-<option defaultValue>...</option>
-<option>Ethernet</option>
-<option>Wifi</option>
-<option>BAM</option>
-</select>
-    </div>
+            />
+            </div>
+            <div className='campo-labelInput'>
+                <label htmlFor="tipo">Tipo de Conexión de Internet</label>
+            <select 
+            id="tipo" 
+            className='select-ticket'
+            name="tipo"
+            value={tipo}
+            onChange={handleInputChange}
+            >
+            <option defaultValue>...</option>
+            <option>Ethernet</option>
+            <option>Wifi</option>
+            <option>BAM</option>
+            </select>
+                </div>
 
-</fieldset>
-    </div>
-
-
-    <div className="form-row prueba2">
-    <fieldset className="scheduler-border marco">
-        <legend className="scheduler-border">% Failed</legend>
-    <div className="form-group mb-4 mt-3 ">
-<label htmlFor="optical">190.12.66.242 </label>
-<input
-type="text"
-id="optical"
-className="form-control"
-name="optical"
-autoComplete="off"
-placeholder="%"
-value={optical}
-onChange={handleInputChange}
-
-/>
-</div>
-
-<div className="form-group mb-4 ">
-<label htmlFor="claro">190.119.245.122 </label>
-<input
-type="text"
-id="claro"
-className="form-control"
-name="claro"
-autoComplete="off"
-placeholder="%"
-value={claro }
-onChange={handleInputChange}
-
-/>
-</div>
-
-<div className="form-group mb-4">
-<label htmlFor="gateway">gateway </label>
-<input
-type="text"
-id="gateway"
-className="form-control"
-name="gateway"
-autoComplete="off"
-placeholder="% "
-value={gateway}
-onChange={handleInputChange}
+            </fieldset>
+                </div>
 
 
-/>
-</div>
-<div className="form-group mb-4">
-<label htmlFor="chile">192.9.100.62</label>
-<input
-type="text"
-id="chile"
-className="form-control"
-name="chile"
-autoComplete="off"
-placeholder="%"
-value={chile}
-onChange={handleInputChange}
+                <div >
+                <fieldset  className='fieldset-Main' >
+                    <legend className='legend-campo' >% Failed</legend>
+                <div className='campo-labelInput'>
+            <label htmlFor="optical">190.12.66.242 </label>
+            <input
+            type="text"
+            id="optical"
+            
+            name="optical"
+            autoComplete="off"
+            placeholder="%"
+            value={optical}
+            onChange={handleInputChange}
 
-/>
-</div>
+            />
+            </div>
 
-<div className="form-group mb-4">
-<label htmlFor="chile1">192.9.100.201</label>
-<input
-type="text"
-id="chile1"
-className="form-control"
-name="chile1"
-autoComplete="off"
-placeholder="% "
-value={chile1}
-onChange={handleInputChange}
+            <div className='campo-labelInput'>
+            <label htmlFor="claro">190.119.245.122 </label>
+            <input
+            type="text"
+            id="claro"
+           
+            name="claro"
+            autoComplete="off"
+            placeholder="%"
+            value={claro }
+            onChange={handleInputChange}
 
-/>
-</div>
-<div className="form-group mb-5 ">
-<label htmlFor="google">8.8.8.8</label>
-<input
-type="text"
-id="google"
-className="form-control"
-name="google"
-autoComplete="off"
-placeholder="%"
-value={google}
-onChange={handleInputChange}
+            />
+            </div>
 
-/>
-</div>
-
-</fieldset>
-
-    </div>
+            <div className='campo-labelInput'>
+            <label htmlFor="gateway">gateway </label>
+            <input
+            type="text"
+            id="gateway"
+           
+            name="gateway"
+            autoComplete="off"
+            placeholder="% "
+            value={gateway}
+            onChange={handleInputChange}
 
 
-    
- 
-<div className="row historico">
+            />
+            </div>
+            <div className='campo-labelInput'>
+            <label htmlFor="chile">192.9.100.62</label>
+            <input
+            type="text"
+            id="chile"
+            
+            name="chile"
+            autoComplete="off"
+            placeholder="%"
+            value={chile}
+            onChange={handleInputChange}
 
-<button 
-type="submit"
-className=" btn btn-warning btn-block"
->Agregar al histórico</button>
+            />
+            </div>
 
-</div>
-       
-</fieldset>
-</div>
+            <div className='campo-labelInput'>
+            <label htmlFor="chile1">192.9.100.201</label>
+            <input
+            type="text"
+            id="chile1"
+           
+            name="chile1"
+            autoComplete="off"
+            placeholder="% "
+            value={chile1}
+            onChange={handleInputChange}
+
+            />
+            </div>
+            <div className='campo-labelInput'>
+            <label htmlFor="google">8.8.8.8</label>
+            <input
+            type="text"
+            id="google"
+           
+            name="google"
+            autoComplete="off"
+            placeholder="%"
+            value={google}
+            onChange={handleInputChange}
+
+            />
+            </div>
+
+            </fieldset>
+
+                </div>
 
 
-<div className="col-7 borde" >
+                
+            
+            <div >
+
+            <button 
+            type="submit"
+            className="btn btn-historico"
+          
+            ><i class="fa-solid fa-plus"></i> Agregar al histórico</button>
+
+            </div>
+                
+            </fieldset>
+            </div>
+
+
+<div  className='campos'>
 {
-    (search.length>1)?(<h2 className="text-center sombreado">Total:{res.length} Incidencias</h2>):(<h2 className="text-center sombreado">Total:{tickets.length} Incidencias</h2>)
+    (search.length>1)?(<h2 className="text-graph">Total:{res.length} Incidencias</h2>):(<h2 className="text-graph">Total:{tickets.length} Incidencias</h2>)
 }
-<h2 className="text-center sombreado"></h2>
+<h2 className="text-graph"></h2>
 <Line 
 data={ chartData }
 width={800}
-height={300}
+height={800}
 options= {{
     responsive:true,
     
@@ -955,11 +961,14 @@ options= {{
 
 
 </div>
-<div className="espacioLine">
+
+
+
+<div className='campos campos-bar' >
   
     <Bar
           data={chartBar}
-          width={700}
+          width={500}
           height={500}
           options={{
             maintainAspectRatio: false,
@@ -992,11 +1001,13 @@ options= {{
 
     }} />
 </div>
-<div>
+
+
+<div className='campos campos-bar'>
 <Line 
 data={ chartMb }
-width={700}
-height={500}
+width={450}
+height={320}
 options= {{
     responsive:true,
     
@@ -1031,12 +1042,13 @@ options= {{
 }}
 />
 </div>
-<div className="espacio">
-<div className="espacio1">
+
+
+<div className='campos campos-bar'>
 <Pie
           data={chartDona}
-          width={400}
-          height={400}
+          width={350}
+          height={230}
           options={{
             title:{
               display:true,
@@ -1053,11 +1065,11 @@ options= {{
 
        
 </div>
-<div>
+<div className='campos campos-bar'>
 <Doughnut
           data={chartDona1}
-          width={450}
-          height={400}
+          width={350}
+          height={220}
           options={{
             title:{
               display:true,
@@ -1074,7 +1086,7 @@ options= {{
 
        
 </div>
-</div>
+
 
 
 </div>
@@ -1094,15 +1106,15 @@ options= {{
 
 
 
-<div className="row subir">
-<div className="col-12 ml-1 ">
+<div className="table-tickets contenedorXlsx">
+<div className="table-mainTickets ">
 <table 
-className="table table-bordered table-responsive-md text-center"
+className="table-ticketV1"
 id="tablaInventario"
 >
 
 <thead>
-    <tr>
+    <tr className='encabezado-ticketTable'>
       <th scope="col">#</th>
       <th scope="col">Nombres y Apellidos</th>
       <th scope="col">Dirección Ip VPN</th>
@@ -1147,12 +1159,14 @@ id="tablaInventario"
 <td>
 <div className="separacion">
 <button 
-className="btn btn-danger ml-1 mr-1"
+className="btn btn-deleteTicket"
+title='Borrar'
 onClick={ ()=>handleDelete(data.id) }
-> Borrar </button>
+><i class="fa-solid fa-trash"></i> </button>
 <button 
 onClick={()=>handleToggle(data.id)}
-className="btn btn-success">Editar</button>
+title="Editar"
+className="btn btn-EditTicket"><i class="fa-solid fa-pen-to-square"></i></button>
 </div>
 </td>
 
@@ -1181,12 +1195,14 @@ className="btn btn-success">Editar</button>
 <td>
 <div className="separacion">
 <button 
-className="btn btn-danger ml-1 mr-1"
+className="btn btn-deleteTicket"
+title='Eliminar'
 onClick={ ()=>handleDelete(data.id) }
-> Borrar </button>
+> <i class="fa-solid fa-trash"></i> </button>
 <button 
 onClick={()=>handleToggle(data.id)}
-className="btn btn-success">Editar</button>
+title="Editar"
+className="btn btn-EditTicket"><i class="fa-solid fa-pen-to-square"></i></button>
 
 </div>
 

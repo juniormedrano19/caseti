@@ -109,34 +109,23 @@ init();
 
 
     return (
-        <div>
-  
-        <div className="excel row">
-        <div className="col-4">
-        <h1>Lista de usuarios de Cobtel</h1>
-        </div>
-        <div className="col-4">
-            <ReactHTMLTableToExcel 
-                id="botonExportarExcel"
-                className="btn btn-outline-success btn-block"
-                table="tablaInventario"
-                filename="Lista_Usuario"
-                sheet="Usuarios"
-                buttonText="Descargar Excel"
+        <div className='contenedorXlsx'>
 
-                
-            />
-           </div>
-            <div className="col-4">
+<div className="cabecera-tickets contenedorXlsx">
+        <div className="title-excel">
+        <h1>Lista de usuarios </h1>
+        </div>
+      
+            <div className="nav-ticketsButtons">
               <form 
-              className="form-group expandir mt-3"
+              className="formulario-search"
             
               >
            
 <input
 type="text"
 id="search"
-className="form-control mr-sm-2"
+className="input-searchTickets"
 name="search"
 autoComplete="off"
 placeholder="Search"
@@ -145,157 +134,204 @@ onChange={ handleInputSearch }
 
 
 />
- 
+
+
+
+
+
+
+
+        
     <button 
    
-    className="btn btn-success my-2 my-sm-0" 
-    type="submit">Search</button>
+    className="btn btn-searchTickets" 
+    type="submit"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
     </form>
+    <div className="col-4">
+            <ReactHTMLTableToExcel 
+                id="botonExportarExcel"
+                className="btn btn-descargarExcelTickets"
+                table="tablaInventario"
+                filename="Lista_Usuario"
+                sheet="Usuarios"
+                buttonText="Descargar Excel"
+
+                
+            />
+           </div>
     </div>
         
         </div>
-            <hr />
+
+  
+       
+           
 
 
 
 
-
-        <div className="row">
-            <div className="col-2 ml-3 detail">
+        <div className='modulos-listaUsers'>
+        <div className="add-users">
+            <div >
                 <form 
                 onSubmit={handleSubmit}
-                className="form-group">
-                <label htmlFor="user" className="mt-3">Usuario(*) </label>
-<input
-type="text"
-id="user"
-className="form-control mb-4"
-name="user"
-autoComplete="off"
-placeholder="Usuario de cobtel"
-value={user}
-onChange={handleInputChange}
-
-/>
-
+                className="formulario-usuarios">
+                    <div className='campo-users'>
+                    <label htmlFor="user" >Usuario(*) </label>
+                    <input
+                    type="text"
+                    id="user"
                    
-<label htmlFor="name">Nombres y Apellidos(*) </label>
-<input
-type="text"
-id="name"
-className="form-control mb-4"
-name="name"
-autoComplete="off"
-placeholder="Nombres y Apellidos"
-value={name}
-onChange={handleInputChange}
+                    name="user"
+                    autoComplete="off"
+                    placeholder="Usuario de cobtel"
+                    value={user}
+                    onChange={handleInputChange}
 
-/>
-
-<label htmlFor="country">Pais</label>
-<select 
-id="country" 
-className="form-control mb-4"
-name="country"
-value={country}
-onChange={handleInputChange}
->
-<option defaultValue>...</option>
-<option>Peru</option>
-</select>
-
-<label htmlFor="cargo">Cargo</label>
-<select 
-id="cargo" 
-className="form-control mb-4"
-name="cargo"
-value={cargo}
-onChange={handleInputChange}
->
-<option defaultValue>...</option>
-<option>Cobrador Telefonico
-</option>
-<option>Supervisor Telefonico
-</option>
-</select>
-
+                    />
+                    </div>
+               
+                    <div className='campo-users'>
+                    <label htmlFor="name">Nombres y Apellidos(*) </label>
+                    <input
+                    type="text"
+                    id="name"
                    
-<label htmlFor="cedente">Cedente(*) </label>
-<input
-type="text"
-id="cedente"
-className="form-control mb-4"
-name="cedente"
-autoComplete="off"
-placeholder="Cedente"
-value={cedente}
-onChange={handleInputChange}
+                    name="name"
+                    autoComplete="off"
+                    placeholder="Nombres y Apellidos"
+                    value={name}
+                    onChange={handleInputChange}
 
-/>
-
-<label htmlFor="empresa">Empresa(*) </label>
-<input
-type="text"
-id="empresa"
-className="form-control mb-4"
-name="empresa"
-autoComplete="off"
-placeholder="Empresa"
-value={empresa}
-onChange={handleInputChange}
-
-/>
+                    />
+                    </div>
+                    <div className='campo-users'>
+                    <label htmlFor="country">Pais</label>
+                    <select 
+                    id="country" 
+                   className='select-users'
+                    name="country"
+                    value={country}
+                    onChange={handleInputChange}
+                    >
+                    <option defaultValue>...</option>
+                    <option>Peru</option>
+                    </select>
+                    </div>
 
 
+                    <div className='campo-users'>
+                    <label htmlFor="cargo">Cargo</label>
+                    <select 
+                    id="cargo" 
+                    className='select-users'
+                    name="cargo"
+                    value={cargo}
+                    onChange={handleInputChange}
+                    >
+                    <option defaultValue>...</option>
+                    <option>Cobrador Telefonico
+                    </option>
+                    <option>Supervisor Telefonico
+                    </option>
+                    </select>
+                    </div>
 
-<label htmlFor="extension">Extensión(*) </label>
-<input
-type="text"
-id="extension"
-className="form-control mb-4"
-name="extension"
-autoComplete="off"
-placeholder="Extensión"
-value={extension}
-onChange={handleInputChange}
-
-/>
 
 
-<label htmlFor="hostname">Hostname(*) </label>
-<input
-type="text"
-id="hostname"
-className="form-control mb-4"
-name="hostname"
-autoComplete="off"
-placeholder="Hostname"
-value={hostname}
-onChange={handleInputChange}
+                    <div className='campo-users'>
+                    <label htmlFor="cedente">Cedente(*) </label>
+                    <input
+                    type="text"
+                    id="cedente"
+                  
+                    name="cedente"
+                    autoComplete="off"
+                    placeholder="Cedente"
+                    value={cedente}
+                    onChange={handleInputChange}
 
-/>
+                    /> 
+                        
+                        </div>                  
+
+
+                        <div className='campo-users'>
+                        <label htmlFor="empresa">Empresa(*) </label>
+                        <input
+                        type="text"
+                        id="empresa"
+                    
+                        name="empresa"
+                        autoComplete="off"
+                        placeholder="Empresa"
+                        value={empresa}
+                        onChange={handleInputChange}
+
+                        />
+
+                        </div>
+
+
+                        <div className='campo-users'>
+                        <label htmlFor="extension">Extensión(*) </label>
+                        <input
+                        type="text"
+                        id="extension"
+                   
+                        name="extension"
+                        autoComplete="off"
+                        placeholder="Extensión"
+                        value={extension}
+                        onChange={handleInputChange}
+
+                        />
+                        </div>
+
+
+                        <div className='campo-users'>
+                        <label htmlFor="hostname">Hostname(*) </label>
+                        <input
+                        type="text"
+                        id="hostname"
+                     
+                        name="hostname"
+                        autoComplete="off"
+                        placeholder="Hostname"
+                        value={hostname}
+                        onChange={handleInputChange}
+
+                        />
+                        </div>
+
 
 
 <button 
 type="submit"
-className=" btn btn-primary btn-block "
+className=" btn btn-addUsers "
 >Agregar al histórico</button>
 
 
                   
                 </form>
             </div>
-            <div className="col-9"></div>
+            
         </div>
-        <div className="row ">
-            <div className="col-11 ml-5 mt-3">
+
+
+
+
+
+
+        <div className="table-users ">
+            <div className="table-mainUsers">
             <table 
-className="table table-bordered table-responsive-md text-center"
+className="table table-usersRight"
 id="tablaInventario"
 >
 
-<thead>
-    <tr>
+<thead className='thead-users'>
+    <tr className='encabezado-tableUsers'>
       <th scope="col">#</th>
       <th scope="col">Usuario</th>
       <th scope="col">Nombres y Apellidos</th>
@@ -327,13 +363,16 @@ id="tablaInventario"
 <td>{data.hostname}</td>
 <td>
 <div className="separacion">
+
 <button 
-className="btn btn-danger ml-1 mr-1"
+className="btn btn-deleteTicket"
+title='Eliminar'
 onClick={ ()=>handleDelete(data.id) }
-> Borrar </button>
+> <i class="fa-solid fa-trash"></i> </button>
 <button 
 
-className="btn btn-success">Editar</button>
+title="Editar"
+className="btn btn-EditTicket"><i class="fa-solid fa-pen-to-square"></i></button>
 </div>
 </td>
 
@@ -356,12 +395,14 @@ className="btn btn-success">Editar</button>
 <td>
 <div className="separacion">
 <button 
-className="btn btn-danger ml-1 mr-1"
+className="btn btn-deleteTicket"
+title='Eliminar'
 onClick={ ()=>handleDelete(data.id) }
-> Borrar </button>
+> <i class="fa-solid fa-trash"></i> </button>
 <button 
 
-className="btn btn-success">Editar</button>
+title="Editar"
+className="btn btn-EditTicket"><i class="fa-solid fa-pen-to-square"></i></button>
 </div>
 </td>
 
@@ -382,7 +423,7 @@ className="btn btn-success">Editar</button>
             </div>
         </div>
         
-
+</div>
         </div>
     )
 }

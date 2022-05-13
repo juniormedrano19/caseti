@@ -1,0 +1,833 @@
+:root {
+  --title:#030303;
+    --parrafo: #636364;
+    --login: #EA454C;
+    --label:#181818;
+    --blanco:#fff;
+    --navbar:#f4f5f6;
+    --azul:#0652DD;
+    --btnExcel:#78e08f;
+    --btnExcelHover:#21B76E;
+    --abrirArchivo:#1e90ff;
+    --fontNavbar:#3742fa;
+    --encabezadoTabla:#007bff;
+    --total:#03A86C;
+    --deleteButton:#FF5E57;
+    --contenedorButton:#FFEADD ;
+    --contenedorEditButton:#CAFCD1;
+    --editButton:#05C46B;
+    --searchButton: #474787;
+    --descargarExcelTicket:#78E08F;
+    --descargarExcelLine:#57C078;
+    --addHoverButton:#0571FF;
+    --addButtonTask:#004FB7;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    /* Fontsize de 16px por defecto*/
+    font-size: 62.5%; /* 1Rem=10px*/
+  }
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }  /* inicializa la caja en función del border-box */
+
+
+
+body {
+    background-color: var(--blanco);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+}
+
+
+
+.contenedor{
+    max-width: 120rem; /* maximo ancho */
+    
+    margin: 0 auto; /* centra */
+}
+
+.contenedorLogin{
+    max-width: 140rem; /* maximo ancho */
+    
+    margin: 0 auto; /* centra */
+}
+
+h1, h2 {
+    color: var(--negro);
+    text-align: center;
+    margin: 5rem 0;
+}
+h1{
+    font-size: 6rem;
+}
+h2{
+    font-size: 4rem;
+    margin: 1rem 0;
+}
+h3{
+    font-size: 3rem;
+}
+a{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: var(--fontMain);
+    cursor: pointer;
+  
+}
+.btn{
+  
+    display: block; /* todo el ancho */
+  
+  
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background-color .3s ease-out;
+    text-align: center;
+  
+    border-radius: 1rem;
+    
+}
+
+img{
+    max-width: 100%; /* toma el espacio del div */
+    /* display: block; */ /* ajusta */
+}
+/* formulario */
+.formulario-Main{
+  /*   border: 1px solid black; */
+    max-width: 80%;
+    margin: 0 auto;
+    height: 90vh;
+    margin-top: 3rem;
+    
+ 
+}
+
+.login-contenedor{
+    display: flex;
+ /*    border: 1px solid black; */
+    height: 100vh;
+}
+
+.login-firstPart{
+  /*   border: 1px solid black; */
+    width: 45%;
+  /* align-items: center;
+    display: flex;
+  flex-direction: column; */
+
+}
+
+.login-firstPart h2{
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    color: var(--title);
+}
+
+.login-firstPart p{
+    font-size: 1.4rem;
+    color: var(--parrafo);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+/* Formulario Login */
+.formulario-login{
+display: flex;
+flex-direction: column;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+.campo .label-form{
+    color: var(--label);
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+.campo .input-form{
+    height: 5rem;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(0, 0, 0, .25);
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+    font-family: 'Poppins';
+}
+.campo .input-form:focus{
+  outline: none;
+}
+
+.opciones-check{
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+.opciones-check input{
+    margin-right: 1rem;
+}
+
+.opciones-check label{
+    font-size: 1.4rem;
+}
+.opciones-check .enlace-forgot{
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: color .3s ease;
+}
+.opciones-check .enlace-forgot:hover{
+    color: var(--login);
+  
+}
+
+.btn-signIn{
+    border: 1px solid var(--login);
+    background-color: var(--login);
+    color: var(--blanco);
+    height: 5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+   
+}
+
+.btn-socialGoogle {
+    border: 1px solid rgba(0, 0, 0, .25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    font-weight: 500;
+}
+.centrar{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.centrar img{
+    margin-right: 1rem;
+}
+
+.text-noAccount{
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 1.4rem;
+}
+
+.text-noAccount .enlace-register{
+    color: var(--login);
+    cursor: pointer;
+}
+
+/* SECOND PART */
+.login-secondPart{
+    width: calc(100% - 45%);
+    background-color: cadetblue;
+
+}
+
+
+.login-secondPart img{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+
+@media (max-width:768px){
+    .login-secondPart{
+        display: none;
+    }
+
+    .login-firstPart{
+        /*   border: 1px solid black; */
+          width:100%;
+        /* align-items: center;
+          display: flex;
+        flex-direction: column; */
+      
+      }
+  
+}
+
+/* navbar */
+
+.navbar-principal{
+
+
+    background-color:var(--navbar);
+    margin: 0 auto;
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, .65);
+ 
+}
+
+.navbar-nav{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+   
+    height: 65px;
+    color: var(--fontNavbar);
+}
+.navbar-nav .enlace-nav{
+    transition: all .3s ease;
+    font-weight: 500;
+}
+
+.navbar-nav .enlace-nav:hover, .enlace-nav.active{
+    padding: .7rem 1.3rem;
+    background-color: var(--azul);
+    border-radius: .4rem;
+    color: var(--blanco);
+}
+
+
+/* TICKETS */
+
+.tickets-screen{
+    background-color: #f5f6fa;
+}
+.cabecera-tickets{
+    align-items: center;
+    display: flex;
+ 
+    justify-content: space-between;
+}
+
+.nav-ticketsButtons{
+    display: flex;
+}
+.formulario-search{
+  
+    display: flex;
+    margin: 0 1rem;
+}
+
+ .formulario-search input{
+     width: 30rem;
+     border-radius: .8rem;
+     border: 1px solid rgba(0, 0, 0, .25);
+     font-family: 'Poppins';
+     padding: 0 .5rem;
+
+
+ }
+
+ .formulario-search input:focus{
+  outline: none;
+    
+
+}
+.btn-searchTickets{
+background-color: var(--blanco);
+border: 1px solid var(--searchButton);
+color: var(--searchButton);
+position: relative;
+right: 1rem;
+transition: all .3s ease;
+}
+.btn-searchTickets:hover{
+    background-color: var(--searchButton);
+    border: 1px solid var(--searchButton);
+    color: var(--blanco);
+    }
+.btn-descargarExcelTickets{
+    background-color: var(--descargarExcelTicket);
+    border: 1px solid var(--descargarExcelLine);
+    color: var(--blanco);
+}
+
+.btn-descargarExcelTickets:hover{
+    background-color: var(--btnExcelHover);
+    border: 1px solid var(--descargarExcelLine);
+    color: var(--blanco);
+}
+.contenedor-mainTickets{
+
+ 
+  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: 1fr 50rem 50rem;
+   gap: 2rem;
+  
+ 
+}
+.contenedor-mainTickets .campos{
+    width: calc(140rem/2);
+    height: 80rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .45);
+   
+}
+.contenedor-mainTickets .campos-bar{
+    width: calc(140rem/2);
+    height: 50rem;
+  
+    
+}
+
+.btn-historico{
+  width: 90%;
+  margin: 0 auto;
+  border: none;
+  background-color: #28a745;
+  color: var(--blanco);
+  font-family: 'Poppins';
+  transition: background-color .3s ease;
+}
+
+.btn-historico:hover{
+    background-color: #218c74;
+}
+
+.fieldset-Main{
+    border:none;
+    margin-top: 1rem;
+    border-radius: .3rem;
+    margin-left: 1rem;
+}
+.legend-main{
+    width: 90%;
+    
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--azul);
+    color: var(--blanco);
+    border-radius: .5rem;
+    padding: .4rem 0;
+
+}
+
+.legend-campo{
+   
+    font-weight: 600;
+  border-radius: .6rem;
+  padding: .3rem 1.5rem;
+    border: 1px solid var(--btnExcelHover);
+    color: var(--btnExcelHover);
+    
+}
+
+.campo-labelInput{
+    display: flex;
+    margin: 1rem 0;
+}
+
+.campo-labelInput label{
+    flex-basis: 18rem;
+    font-size: 1.4rem;
+}
+
+.campo-labelInput input, .select-ticket{
+    width: calc(100% - 20rem);
+    border-radius: .3rem;
+    padding: .5rem .5rem;
+    border: .5px solid rgba(0, 0, 0, .25);
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+   
+}
+
+.campo-labelInput input:focus, .select-ticket:focus{
+    outline: none;
+}
+
+.text-graph{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.table-tickets{
+
+    margin-top: 2rem !important;
+    background-color: #fff;
+    border-radius: .5rem;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .45);
+    margin-bottom: 2rem !important;
+   
+}
+
+
+
+.table-ticketV1 thead{
+    background-color: var(--navbar);
+   
+}
+
+.encabezado-ticketTable th{
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom:1px solid var(--navbar);
+    padding: 0 .5rem ;
+}
+.btn-deleteTicket{
+background-color: var(--contenedorButton);
+color: var(--deleteButton);
+border: 1px solid var(--deleteButton);
+margin: 0 1rem;
+}
+
+.btn-EditTicket{
+    background-color: var(--contenedorEditButton);
+    color: var(--editButton);
+    border: 1px solid var(--editButton);
+    margin: 0 1rem;
+ 
+}
+/* DAYLI TAREAS */
+.title-task{
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--parrafo);
+    margin: 2rem 0;
+    text-align: left;
+}
+.title-mainTask{
+  
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-tasks{
+    width: 55%;
+    
+}
+
+.add-tasks{
+  
+    width: 45%;
+    padding: 0rem 5rem;
+   
+}
+
+.input-addTasks{
+    width: 100%;
+    border-radius: .5rem;
+    height: 4rem;
+    border: .5px solid rgba(0, 0, 0, .25);
+    margin:1.5rem 0;
+    font-family: 'Poppins';
+    padding: 0 .5rem;
+}
+.input-addTasks:focus{
+   outline: none;
+}
+
+.agregar-title{
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--azul);
+}
+
+.btn-addTaks{
+width: 100%;
+border: none;
+background-color: var(--addButtonTask);
+color: var(--blanco);
+font-family: 'Poppins';
+}
+
+.btn-addTaks:hover{
+  
+    background-color: var(--addHoverButton);
+    
+    }
+.btn-deleteTasks{
+    margin: .5rem 0;
+    border: 1px solid var(--deleteButton);
+    background-color: var(--blanco);
+    color: var(--deleteButton);
+    transition: all .3s ease;
+}
+
+.btn-deleteTasks:hover{
+ 
+   
+    background-color: var(--deleteButton);
+    color: var(--blanco);
+}
+/* LISTA DE USUARIOS */
+.modulos-listaUsers{
+ 
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-users{
+    width: 40%;
+    
+}
+
+.table-users {
+    width: 60%;
+}
+
+.formulario-usuarios{
+    display: flex;
+    flex-direction: column;
+}
+.campo-users{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+ .campo-users label{
+    flex-basis: 17rem ;
+    font-size: 1.4rem;
+    font-weight: 600;
+ 
+}
+
+.campo-users input, .select-users{
+    flex: 1;
+    border-radius: .4rem;
+    height: 4rem;
+    margin: 1rem 0;
+    padding: 0 .5rem;
+    font-family: 'Poppins';
+    border: .5px solid rgba(0, 0, 0, .25);
+}
+
+.campo-users input:focus, .select-users:focus{
+   outline: none;
+}
+
+.btn-addUsers {
+    background-color: var(--addButtonTask);
+    color: var(--blanco);
+    border: none;
+    font-family: 'Poppins';
+    transition: background-color .3s ease;
+    margin-top: 1rem;
+}
+
+.btn-addUsers:hover {
+    background-color: var(--addHoverButton);
+    
+}
+
+.table-mainUsers{
+    margin: 0 .5rem 0 2rem;
+   
+}
+
+.table-usersRight{
+    text-align: center;
+}
+
+/* .thead-users tr{
+    border: 1px solid green;
+} */
+
+.encabezado-tableUsers{
+    border: 1px solid var(--navbar);
+    background-color: var(--navbar);
+    
+}
+
+
+
+/* EXCEL CDR */
+.contenedorXlsx{
+    max-width: 140rem;
+    margin: 0 auto;
+}
+.boton-nav{
+/*     border: 1px solid black; */
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+.btn-success{
+    background-color: var(--btnExcel);
+    border: none;
+    font-family: "Poppins";
+    font-weight: 500;
+    color: var(--azul);
+
+}
+
+.btn-success:hover{
+    background-color: var(--btnExcelHover);
+    border: none;
+    font-family: "Poppins";
+    font-weight: 500;
+    color: var(--blanco);
+
+}
+.title-excel h1{
+    font-weight: 500;
+    font-size: 4rem;
+    color: var(--parrafo);
+    margin: 2rem 0;
+}
+.proveedores-list{
+ 
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+.proveedor-name h2{
+    font-weight: 500;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, .75);
+}
+
+.btn-archivo{
+    border: none;
+    font-family: "Poppins";
+    border: 1px solid var(--abrirArchivo);
+    background-color: #fff;
+    color:  var(--abrirArchivo);
+    transition: all .3s ease;
+    font-weight: 500;
+}
+
+.btn-archivo:hover{
+    background-color:var(--abrirArchivo) ;
+    color: var(--blanco);
+}
+
+.costos-unitarios{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.costos-unitarios .costo{
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+
+
+.costo label{
+    font-size: 1.3rem;
+}
+
+.costo select{
+    height: 2.5rem;
+    border-radius: .6rem;
+    font-family: 'Poppins';
+    text-align: center;
+}
+
+.costo select:focus{
+    outline: none;
+}
+
+.btn-Calcular{
+   
+
+   display: block;
+}
+
+.btn-Calcular button{
+    width: 100%;
+    background-color: var(--total);
+    color: var(--blanco);
+}
+
+.table-main{
+   
+    margin: 0 auto;
+    max-width: 140rem;
+    margin-top: 2rem;
+ 
+}
+
+.table-proveedores{
+    font-family: 'Poppins';
+}
+
+.table-proveedores .encabezadoPrincipal{
+    background-color: var(--encabezadoTabla);
+    
+}
+
+.encabezadoPrincipal th{
+    border: none !important;
+   font-size: 1.4rem;
+   font-weight: 500;
+   height: 3rem;
+   border-radius: .5rem;
+
+}
+
+.encabezadoSecundario th{
+    border: none !important;
+    background-color: var(--navbar);
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 1rem;
+}
+
+tbody td, tr{
+font-size: 1.4rem;
+padding: .5rem;
+
+}
+
+.date-encabezado{
+    background-color:var(--encabezadoTabla) ;
+    color: var(--blanco);
+    font-weight: 500;
+    border-radius: .5rem;
+}
+
+
+.tituloSombreado1{
+font-size: 1.3rem;
+font-weight: 600;
+background-color: var(--navbar);
+}
+
+.tituloSombreadoTotal{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--blanco);
+    background-color: var(--total);
+}
+
+.sombreadoCeldaTotal{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.delete-button{
+    background-color:var(--contenedorButton);
+}
+
+.delete-main{
+   width: 100%;
+   height: 4rem;
+   background-color: var(--blanco);
+   border: none;
+   border: 1px solid var(--deleteButton);
+   border-radius: .5rem;
+   color: var(--deleteButton);
+   cursor: pointer;
+   transition: all .3s ease;
+}
+
+
+.delete-main:hover{
+    background-color:var(--deleteButton) ;
+    color:var(--blanco) ;
+}
